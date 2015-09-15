@@ -9,5 +9,6 @@ before_install:
  - unzip ../srcclr-console-latest.zip -d ../ && rm ../srcclr-console-latest.zip && mv ../srcclr-console-* ../srcclr
 
 after_success:
+ - print $SRCCLR
  - echo -e '\n$SRCCLR\n\n\n\nquit' | ../srcclr/srcclr
  - ../srcclr/srcclr -e "scan --path $PWD"
