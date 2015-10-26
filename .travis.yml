@@ -5,7 +5,7 @@ node_js:
 services: mongodb
 
 before_install:
-- curl -O http://jenkins.ec2.srcclr.com/job/console/146/com.sourceclear.console%24console/artifact/com.sourceclear.console/console/1.0.0-20151025.235842-66/console-1.0.0-20151025.235842-66.tar.gz && tar xvf console-1.0.0-20151025.235842-66.tar.gz
+- wget http://jenkins.ec2.srcclr.com/job/console/146/com.sourceclear.console%24console/artifact/com.sourceclear.console/console/1.0.0-20151025.235842-66/console-1.0.0-20151025.235842-66.tar.gz && tar xvf console-1.0.0-20151025.235842-66.tar.gz
 - ./srcclr-console-1.0.0-SNAPSHOT/install-xdg.sh install
 - srcclr config --create
 
