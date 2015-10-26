@@ -5,9 +5,9 @@ node_js:
 services: mongodb
 
 before_install:
- - wget -P ../ https://download.srcclr.com/console/srcclr-console-latest.zip
- - unzip ../srcclr-console-latest.zip -d ../ && rm ../srcclr-console-latest.zip && mv ../srcclr-console-* ../srcclr
+- curl -O http://jenkins.ec2.srcclr.com/job/console/146/com.sourceclear.console%24console/artifact/com.sourceclear.console/console/1.0.0-20151025.235842-66/console-1.0.0-20151025.235842-66.tar.gz && tar xvf console-1.0.0-20151025.235842-66.tar.gz
+- ./srcclr-console-1.0.0-SNAPSHOT/install-xdg.sh install
+- srcclr config --create
 
 after_success:
- - echo -e '\n\n\n\n\nquit' | ../srcclr/srcclr
- - ../srcclr/srcclr -e "config set --scToken $SRCCLR;scan --path $PWD"
+- srcclr scan --upload=org
