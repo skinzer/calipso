@@ -1,6 +1,5 @@
 Calipso
 -------
-
 Calipso is a simple NodeJS content management system, built along
 similar themes to Drupal and Wordpress, that is designed to be fast,
 flexible and simple.
